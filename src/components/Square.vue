@@ -8,13 +8,14 @@
       one: height == 1
     }'
     @click='onClick(id)'
+    :disabled='playerID !== currentPlayer'
   >{{ height }}</div>
 </template>
 
 <script>
 export default {
   name: 'Square',
-  props: ['height', 'placeHandler', 'selectHandler', 'moveHandler', 'buildHandler', 'currentPhase', 'blue', 'gray', 'id'],
+  props: ['height', 'placeHandler', 'selectHandler', 'moveHandler', 'buildHandler', 'currentPhase', 'playerID', 'currentPlayer', 'blue', 'gray', 'id'],
   computed: {
     isBlank: function () {
       if (this.height == 0) {
